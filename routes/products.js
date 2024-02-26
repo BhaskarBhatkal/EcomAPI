@@ -3,7 +3,6 @@ const express = require("express");
 const Category = require("../models/category");
 const router = express.Router();
 const mongoose = require("mongoose");
-const multer = require("multer");
 
 router.get(`/`, async (req, res) => {
   // localhost:3000/api/v1/products?categories=2342342,234234
@@ -37,7 +36,6 @@ router.post(`/`, async (req, res) => {
     name: req.body.name,
     description: req.body.description,
     richDescription: req.body.richDescription,
-    image: req.body.image,
     brand: req.body.brand,
     price: req.body.price,
     category: req.body.category,
@@ -67,7 +65,6 @@ router.put("/:id", async (req, res) => {
       name: req.body.name,
       description: req.body.description,
       richDescription: req.body.richDescription,
-      image: req.body.image,
       brand: req.body.brand,
       price: req.body.price,
       category: req.body.category,
